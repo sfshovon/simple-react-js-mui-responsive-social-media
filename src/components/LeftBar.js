@@ -1,16 +1,12 @@
 import { Avatar, AvatarGroup, Box, Divider, ImageList, ImageListItem, List, ListItem, ListItemAvatar, ListItemText, Typography } from '@mui/material';
 import React, { useEffect, useState } from 'react';
+import LP1 from '../assets/images/LP1.jpg';
+import LP2 from '../assets/images/LP2.jpg';
+import LP3 from '../assets/images/LP3.jpg';
 import OnlineFriends from './OnlineFriends';
-import LP1 from '../assets/images/LP1.jpg'
-import LP2 from '../assets/images/LP2.jpg'
-import LP3 from '../assets/images/LP3.jpg'
-
-
 
 const LeftBar = () => {
-
   const [users, setUsers] = useState([]);
-
   useEffect( () => {
     fetch('users.json')
     .then(res => res.json())
@@ -20,7 +16,6 @@ const LeftBar = () => {
   return (
     <Box flex={2} p={2} sx={{ display: {xs: "none", sm: "block"} }}>
       <Box position="fixed" width={315}>
-
         <Typography variant="h6" fontWeight={400}> Active Friends </Typography>
         <AvatarGroup max={8}>
         {
@@ -32,29 +27,18 @@ const LeftBar = () => {
           )
         }
         </AvatarGroup>
-
         <Typography variant="h6" fontWeight={400} mt={2} mb={2}> Recent Photos </Typography>
         <ImageList cols={3} rowHeight={100} gap={8}>
           <ImageListItem>
-            <img
-              src={LP1}
-              alt="Latest Img"
-            />
+            <img src={LP1} alt="Latest Img"/>
           </ImageListItem>
           <ImageListItem>
-            <img
-              src={LP2}
-              alt="Latest Img"
-            />
+            <img src={LP2} alt="Latest Img"/>
           </ImageListItem>
           <ImageListItem>
-            <img
-              src={LP3}
-              alt="Latest Img"
-            />
+            <img src={LP3} alt="Latest Img"/>
           </ImageListItem>
         </ImageList>
-
         <Typography variant="h6" fontWeight={400} mt={2}> Recent Conversations </Typography>
         <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
           <ListItem alignItems="flex-start">
@@ -123,7 +107,6 @@ const LeftBar = () => {
             />
           </ListItem>
         </List>
-
       </Box>
     </Box>
   );

@@ -1,11 +1,9 @@
+import { Box } from '@mui/material';
 import React, { useEffect, useState } from 'react';
-import { Box} from '@mui/material';
 import Post from './Post';
 
 const Feed = () => {
-
   const [posts, setPosts] = useState([]);
-
   useEffect( () => {
     fetch('posts.json')
     .then(res => res.json())

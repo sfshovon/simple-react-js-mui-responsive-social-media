@@ -1,16 +1,14 @@
-import React from 'react';
-import { AppBar, Avatar, Badge, Box, InputBase, Menu, MenuItem, styled, Toolbar, Typography } from '@mui/material';
-import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
-import Mail from '@mui/icons-material/Mail';
 import { Notifications } from '@mui/icons-material';
-import { useState } from 'react';
-import myImg from '../assets/images/me.jpg'
+import Mail from '@mui/icons-material/Mail';
+import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
+import { AppBar, Avatar, Badge, Box, InputBase, Menu, MenuItem, styled, Toolbar, Typography } from '@mui/material';
+import React, { useState } from 'react';
+import myImg from '../assets/images/me.jpg';
 
 const StyledToolbar = styled(Toolbar)({
   display: "flex",
   justifyContent: "space-between"
 })
-
 const Search = styled("div")(({ theme }) => ({
   backgroundColor: "honeydew",
   color: "black",
@@ -18,7 +16,6 @@ const Search = styled("div")(({ theme }) => ({
   borderRadius: theme.shape.borderRadius,
   width: "40%"
 }))
-
 const Icons = styled(Box)(({ theme }) => ({
   display: "none",
   gap: "20px",
@@ -27,7 +24,6 @@ const Icons = styled(Box)(({ theme }) => ({
     display: "flex",
   }
 }));
-
 const UserBox = styled(Box)(({ theme }) => ({
   display: "flex",
   gap: "10px",
@@ -39,20 +35,16 @@ const UserBox = styled(Box)(({ theme }) => ({
 }))
 
 const Navbar = () => {
-
   const [open,setOpen] = useState(false);
   
   return (
     <AppBar position="sticky" sx={{backgroundColor: "darkcyan"}}> 
       <StyledToolbar>
-
         <Typography variant="h6" sx={{ display: {xs: "none", sm: "block"} }}>Conneting Hub</Typography>
         <PeopleAltIcon sx={{ display: {xs: "block", sm: "none"} }}></PeopleAltIcon>
-
         <Search>
           <InputBase sx={{color: "black", fontSize: "18px"}} placeholder="Search..."></InputBase>
         </Search>
-        
         <Icons>
           <Badge badgeContent={8} color="error">
             <Mail/>
@@ -60,14 +52,8 @@ const Navbar = () => {
           <Badge badgeContent={100} color="error">
             <Notifications></Notifications>
           </Badge>
-          <Avatar 
-            sx={{ width: 30, height: 30 }} 
-            src={myImg}
-            onClick={ e => setOpen(true)}
-          >
-          </Avatar>
+          <Avatar sx={{ width: 30, height: 30 }} src={myImg} onClick={ e => setOpen(true)}></Avatar>
         </Icons>
-
         {/* Only Applicable For Small Devices */}
         <UserBox onClick={ e => setOpen(true)}>
           <Avatar sx={{ width: 30, height: 30 }} src={myImg}>
@@ -75,9 +61,7 @@ const Navbar = () => {
           <Typography>Shahriar</Typography>
         </UserBox>
         {/* Only Applicable For Small Devices */}
-
       </StyledToolbar>
-
       <Menu
         id="demo-positioned-menu"
         aria-labelledby="demo-positioned-button"
@@ -96,7 +80,6 @@ const Navbar = () => {
         <MenuItem> My Account </MenuItem>
         <MenuItem> Logout </MenuItem>
       </Menu>
-
     </AppBar>
   );
 };

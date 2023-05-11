@@ -1,6 +1,5 @@
-import { Box, createTheme, Stack,ThemeProvider } from '@mui/material';
+import { Box, createTheme, Stack, ThemeProvider } from '@mui/material';
 import { useState } from 'react';
-import './App.css';
 import AddPost from './components/AddPost';
 import Feed from './components/Feed';
 import LeftBar from './components/LeftBar';
